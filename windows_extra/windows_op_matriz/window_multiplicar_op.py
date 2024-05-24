@@ -1400,168 +1400,235 @@ class WindowMultiplicarOp:
                 self.resultado3.configure(placeholder_text=str(resultado3))
                 self.resultado4.configure(placeholder_text=str(resultado4))
         elif int(self.tamanio1_filas_input.get()) == int(self.tamanio2_columnas_input.get()):
-            if int(self.tamanio1_columnas_input.get()) == 4:
-                if int(self.tamanio2_filas_input.get()) == 3:
-                    if int(self.tamanio1_filas_input.get()) == 4:
-                        pass
-                    elif int(self.tamanio1_filas_input.get()) == 3:
-                        pass
-                    elif int(self.tamanio1_filas_input.get()) == 2:
-                        pass
-                elif int(self.tamanio2_filas_input.get()) == 2:
-                    if int(self.tamanio1_filas_input.get()) == 4:
-                        pass
-                    elif int(self.tamanio1_filas_input.get()) == 3:
-                        pass
-                    elif int(self.tamanio1_filas_input.get()) == 2:
-                        pass
-            elif int(self.tamanio1_columnas_input.get()) == 3:
-                if int(self.tamanio2_filas_input.get()) == 4:
-                    if int(self.tamanio1_filas_input.get()) == 4:
-                        pass
-                    elif int(self.tamanio1_filas_input.get()) == 3:
-                        pass
-                    elif int(self.tamanio1_filas_input.get()) == 2:
-                        pass
-                elif int(self.tamanio2_filas_input.get()) == 2:
-                    if int(self.tamanio1_filas_input.get()) == 4:
-                        pass
-                    elif int(self.tamanio1_filas_input.get()) == 3:
-                        pass
-                    elif int(self.tamanio1_filas_input.get()) == 2:
-                        pass
+            if int(self.tamanio1_columnas_input.get()) == 3:
+                if int(self.tamanio1_filas_input.get()) == 4:
+                    resultado1 = ((int(self.matrizA_1_input.get()) * int(self.matrizB_1_input.get())) +
+                                  (int(self.matrizA_2_input.get()) * int(self.matrizB_5_input.get())) +
+                                  (int(self.matrizA_3_input.get()) * int(self.matrizB_9_input.get())))
+                    resultado2 = ((int(self.matrizA_1_input.get()) * int(self.matrizB_2_input.get())) +
+                                  (int(self.matrizA_2_input.get()) * int(self.matrizB_6_input.get())) +
+                                  (int(self.matrizA_3_input.get()) * int(self.matrizB_10_input.get())))
+                    resultado3 = ((int(self.matrizA_1_input.get()) * int(self.matrizB_3_input.get())) +
+                                  (int(self.matrizA_2_input.get()) * int(self.matrizB_7_input.get())) +
+                                  (int(self.matrizA_3_input.get()) * int(self.matrizB_11_input.get())))
+                    resultado4 = ((int(self.matrizA_1_input.get()) * int(self.matrizB_4_input.get())) +
+                                  (int(self.matrizA_2_input.get()) * int(self.matrizB_8_input.get())) +
+                                  (int(self.matrizA_3_input.get()) * int(self.matrizB_12_input.get())))
+                    resultado5 = ((int(self.matrizA_4_input.get()) * int(self.matrizB_1_input.get())) +
+                                  (int(self.matrizA_5_input.get()) * int(self.matrizB_5_input.get())) +
+                                  (int(self.matrizA_6_input.get()) * int(self.matrizB_9_input.get())))
+                    resultado6 = ((int(self.matrizA_4_input.get()) * int(self.matrizB_2_input.get())) +
+                                  (int(self.matrizA_5_input.get()) * int(self.matrizB_6_input.get())) +
+                                  (int(self.matrizA_6_input.get()) * int(self.matrizB_10_input.get())))
+                    resultado7 = ((int(self.matrizA_4_input.get()) * int(self.matrizB_3_input.get())) +
+                                  (int(self.matrizA_5_input.get()) * int(self.matrizB_7_input.get())) +
+                                  (int(self.matrizA_6_input.get()) * int(self.matrizB_11_input.get())))
+                    resultado8 = ((int(self.matrizA_4_input.get()) * int(self.matrizB_4_input.get())) +
+                                  (int(self.matrizA_5_input.get()) * int(self.matrizB_8_input.get())) +
+                                  (int(self.matrizA_6_input.get()) * int(self.matrizB_12_input.get())))
+                    resultado9 = ((int(self.matrizA_7_input.get()) * int(self.matrizB_1_input.get())) +
+                                  (int(self.matrizA_8_input.get()) * int(self.matrizB_5_input.get())) +
+                                  (int(self.matrizA_9_input.get()) * int(self.matrizB_9_input.get())))
+                    resultado10 = ((int(self.matrizA_7_input.get()) * int(self.matrizB_2_input.get())) +
+                                   (int(self.matrizA_8_input.get()) * int(self.matrizB_6_input.get())) +
+                                   (int(self.matrizA_9_input.get()) * int(self.matrizB_10_input.get())))
+                    resultado11 = ((int(self.matrizA_7_input.get()) * int(self.matrizB_3_input.get())) +
+                                   (int(self.matrizA_8_input.get()) * int(self.matrizB_7_input.get())) +
+                                   (int(self.matrizA_9_input.get()) * int(self.matrizB_11_input.get())))
+                    resultado12 = ((int(self.matrizA_7_input.get()) * int(self.matrizB_4_input.get())) +
+                                   (int(self.matrizA_8_input.get()) * int(self.matrizB_8_input.get())) +
+                                   (int(self.matrizA_9_input.get()) * int(self.matrizB_12_input.get())))
+                    resultado13 = ((int(self.matrizA_10_input.get()) * int(self.matrizB_1_input.get())) +
+                                   (int(self.matrizA_11_input.get()) * int(self.matrizB_5_input.get())) +
+                                   (int(self.matrizA_12_input.get()) * int(self.matrizB_9_input.get())))
+                    resultado14 = ((int(self.matrizA_10_input.get()) * int(self.matrizB_2_input.get())) +
+                                   (int(self.matrizA_11_input.get()) * int(self.matrizB_6_input.get())) +
+                                   (int(self.matrizA_12_input.get()) * int(self.matrizB_10_input.get())))
+                    resultado15 = ((int(self.matrizA_10_input.get()) * int(self.matrizB_3_input.get())) +
+                                   (int(self.matrizA_11_input.get()) * int(self.matrizB_7_input.get())) +
+                                   (int(self.matrizA_12_input.get()) * int(self.matrizB_11_input.get())))
+                    resultado16 = ((int(self.matrizA_10_input.get()) * int(self.matrizB_4_input.get())) +
+                                   (int(self.matrizA_11_input.get()) * int(self.matrizB_8_input.get())) +
+                                   (int(self.matrizA_12_input.get()) * int(self.matrizB_12_input.get())))
+
+                    self.resultado1.configure(placeholder_text=str(resultado1))
+                    self.resultado2.configure(placeholder_text=str(resultado2))
+                    self.resultado3.configure(placeholder_text=str(resultado3))
+                    self.resultado4.configure(placeholder_text=str(resultado4))
+                    self.resultado5.configure(placeholder_text=str(resultado5))
+                    self.resultado6.configure(placeholder_text=str(resultado6))
+                    self.resultado7.configure(placeholder_text=str(resultado7))
+                    self.resultado8.configure(placeholder_text=str(resultado8))
+                    self.resultado9.configure(placeholder_text=str(resultado9))
+                    self.resultado10.configure(placeholder_text=str(resultado10))
+                    self.resultado11.configure(placeholder_text=str(resultado11))
+                    self.resultado12.configure(placeholder_text=str(resultado12))
+                    self.resultado13.configure(placeholder_text=str(resultado13))
+                    self.resultado14.configure(placeholder_text=str(resultado14))
+                    self.resultado15.configure(placeholder_text=str(resultado15))
+                    self.resultado16.configure(placeholder_text=str(resultado16))
+                elif int(self.tamanio1_filas_input.get()) == 2:
+                    resultado1 = ((int(self.matrizA_1_input.get()) * int(self.matrizB_1_input.get())) +
+                                  (int(self.matrizA_2_input.get()) * int(self.matrizB_3_input.get())) +
+                                  (int(self.matrizA_3_input.get()) * int(self.matrizB_5_input.get())))
+                    resultado2 = ((int(self.matrizA_1_input.get()) * int(self.matrizB_2_input.get())) +
+                                  (int(self.matrizA_2_input.get()) * int(self.matrizB_4_input.get())) +
+                                  (int(self.matrizA_3_input.get()) * int(self.matrizB_6_input.get())))
+                    resultado3 = ((int(self.matrizA_4_input.get()) * int(self.matrizB_1_input.get())) +
+                                  (int(self.matrizA_5_input.get()) * int(self.matrizB_3_input.get())) +
+                                  (int(self.matrizA_6_input.get()) * int(self.matrizB_5_input.get())))
+                    resultado4 = ((int(self.matrizA_4_input.get()) * int(self.matrizB_2_input.get())) +
+                                  (int(self.matrizA_5_input.get()) * int(self.matrizB_4_input.get())) +
+                                  (int(self.matrizA_6_input.get()) * int(self.matrizB_6_input.get())))
+
+                    self.resultado1.configure(placeholder_text=str(resultado1))
+                    self.resultado2.configure(placeholder_text=str(resultado2))
+                    self.resultado3.configure(placeholder_text=str(resultado3))
+                    self.resultado4.configure(placeholder_text=str(resultado4))
             elif int(self.tamanio1_columnas_input.get()) == 2:
-                if int(self.tamanio2_filas_input.get()) == 4:
-                    if int(self.tamanio1_filas_input.get()) == 4:
-                        pass
-                    elif int(self.tamanio1_filas_input.get()) == 3:
-                        pass
-                    elif int(self.tamanio1_filas_input.get()) == 2:
-                        pass
-                elif int(self.tamanio2_filas_input.get()) == 3:
-                    if int(self.tamanio1_filas_input.get()) == 4:
-                        pass
-                    elif int(self.tamanio1_filas_input.get()) == 3:
-                        pass
-                    elif int(self.tamanio1_filas_input.get()) == 2:
-                        pass
+                if int(self.tamanio1_filas_input.get()) == 4:
+                    resultado1 = ((int(self.matrizA_1_input.get()) * int(self.matrizB_1_input.get())) +
+                                  (int(self.matrizA_2_input.get()) * int(self.matrizB_5_input.get())))
+                    resultado2 = ((int(self.matrizA_1_input.get()) * int(self.matrizB_2_input.get())) +
+                                  (int(self.matrizA_2_input.get()) * int(self.matrizB_6_input.get())))
+                    resultado3 = ((int(self.matrizA_1_input.get()) * int(self.matrizB_3_input.get())) +
+                                  (int(self.matrizA_2_input.get()) * int(self.matrizB_7_input.get())))
+                    resultado4 = ((int(self.matrizA_1_input.get()) * int(self.matrizB_4_input.get())) +
+                                  (int(self.matrizA_2_input.get()) * int(self.matrizB_8_input.get())))
+                    resultado5 = ((int(self.matrizA_3_input.get()) * int(self.matrizB_1_input.get())) +
+                                  (int(self.matrizA_4_input.get()) * int(self.matrizB_5_input.get())))
+                    resultado6 = ((int(self.matrizA_3_input.get()) * int(self.matrizB_2_input.get())) +
+                                  (int(self.matrizA_4_input.get()) * int(self.matrizB_6_input.get())))
+                    resultado7 = ((int(self.matrizA_3_input.get()) * int(self.matrizB_3_input.get())) +
+                                  (int(self.matrizA_4_input.get()) * int(self.matrizB_7_input.get())))
+                    resultado8 = ((int(self.matrizA_3_input.get()) * int(self.matrizB_4_input.get())) +
+                                  (int(self.matrizA_4_input.get()) * int(self.matrizB_8_input.get())))
+                    resultado9 = ((int(self.matrizA_5_input.get()) * int(self.matrizB_1_input.get())) +
+                                  (int(self.matrizA_6_input.get()) * int(self.matrizB_5_input.get())))
+                    resultado10 = ((int(self.matrizA_5_input.get()) * int(self.matrizB_2_input.get())) +
+                                   (int(self.matrizA_6_input.get()) * int(self.matrizB_6_input.get())))
+                    resultado11 = ((int(self.matrizA_5_input.get()) * int(self.matrizB_3_input.get())) +
+                                   (int(self.matrizA_6_input.get()) * int(self.matrizB_7_input.get())))
+                    resultado12 = ((int(self.matrizA_5_input.get()) * int(self.matrizB_4_input.get())) +
+                                   (int(self.matrizA_6_input.get()) * int(self.matrizB_8_input.get())))
+                    resultado13 = ((int(self.matrizA_7_input.get()) * int(self.matrizB_1_input.get())) +
+                                   (int(self.matrizA_8_input.get()) * int(self.matrizB_5_input.get())))
+                    resultado14 = ((int(self.matrizA_7_input.get()) * int(self.matrizB_2_input.get())) +
+                                   (int(self.matrizA_8_input.get()) * int(self.matrizB_6_input.get())))
+                    resultado15 = ((int(self.matrizA_7_input.get()) * int(self.matrizB_3_input.get())) +
+                                   (int(self.matrizA_8_input.get()) * int(self.matrizB_7_input.get())))
+                    resultado16 = ((int(self.matrizA_7_input.get()) * int(self.matrizB_4_input.get())) +
+                                   (int(self.matrizA_8_input.get()) * int(self.matrizB_8_input.get())))
+
+                    self.resultado1.configure(placeholder_text=str(resultado1))
+                    self.resultado2.configure(placeholder_text=str(resultado2))
+                    self.resultado3.configure(placeholder_text=str(resultado3))
+                    self.resultado4.configure(placeholder_text=str(resultado4))
+                    self.resultado5.configure(placeholder_text=str(resultado5))
+                    self.resultado6.configure(placeholder_text=str(resultado6))
+                    self.resultado7.configure(placeholder_text=str(resultado7))
+                    self.resultado8.configure(placeholder_text=str(resultado8))
+                    self.resultado9.configure(placeholder_text=str(resultado9))
+                    self.resultado10.configure(placeholder_text=str(resultado10))
+                    self.resultado11.configure(placeholder_text=str(resultado11))
+                    self.resultado12.configure(placeholder_text=str(resultado12))
+                    self.resultado13.configure(placeholder_text=str(resultado13))
+                    self.resultado14.configure(placeholder_text=str(resultado14))
+                    self.resultado15.configure(placeholder_text=str(resultado15))
+                    self.resultado16.configure(placeholder_text=str(resultado16))
+                elif int(self.tamanio1_filas_input.get()) == 3:
+                    resultado1 = ((int(self.matrizA_1_input.get()) * int(self.matrizB_1_input.get())) +
+                                  (int(self.matrizA_2_input.get()) * int(self.matrizB_4_input.get())))
+                    resultado2 = ((int(self.matrizA_1_input.get()) * int(self.matrizB_2_input.get())) +
+                                  (int(self.matrizA_2_input.get()) * int(self.matrizB_5_input.get())))
+                    resultado3 = ((int(self.matrizA_1_input.get()) * int(self.matrizB_3_input.get())) +
+                                  (int(self.matrizA_2_input.get()) * int(self.matrizB_6_input.get())))
+                    resultado4 = ((int(self.matrizA_3_input.get()) * int(self.matrizB_1_input.get())) +
+                                  (int(self.matrizA_4_input.get()) * int(self.matrizB_4_input.get())))
+                    resultado5 = ((int(self.matrizA_3_input.get()) * int(self.matrizB_2_input.get())) +
+                                  (int(self.matrizA_4_input.get()) * int(self.matrizB_5_input.get())))
+                    resultado6 = ((int(self.matrizA_3_input.get()) * int(self.matrizB_3_input.get())) +
+                                  (int(self.matrizA_4_input.get()) * int(self.matrizB_6_input.get())))
+                    resultado7 = ((int(self.matrizA_5_input.get()) * int(self.matrizB_1_input.get())) +
+                                  (int(self.matrizA_6_input.get()) * int(self.matrizB_4_input.get())))
+                    resultado8 = ((int(self.matrizA_5_input.get()) * int(self.matrizB_2_input.get())) +
+                                  (int(self.matrizA_6_input.get()) * int(self.matrizB_5_input.get())))
+                    resultado9 = ((int(self.matrizA_5_input.get()) * int(self.matrizB_3_input.get())) +
+                                  (int(self.matrizA_6_input.get()) * int(self.matrizB_6_input.get())))
+
+                    self.resultado1.configure(placeholder_text=str(resultado1))
+                    self.resultado2.configure(placeholder_text=str(resultado2))
+                    self.resultado3.configure(placeholder_text=str(resultado3))
+                    self.resultado4.configure(placeholder_text=str(resultado4))
+                    self.resultado5.configure(placeholder_text=str(resultado5))
+                    self.resultado6.configure(placeholder_text=str(resultado6))
+                    self.resultado7.configure(placeholder_text=str(resultado7))
+                    self.resultado8.configure(placeholder_text=str(resultado8))
+                    self.resultado9.configure(placeholder_text=str(resultado9))
         else:
             if int(self.tamanio1_filas_input.get()) == 2:
-                if int(self.tamanio2_columnas_input.get()) == 3:
-                    resultado1 = int(self.matrizA_1_input.get()) + int(self.matrizB_1_input.get())
-                    resultado2 = int(self.matrizA_2_input.get()) + int(self.matrizB_2_input.get())
-                    resultado3 = int(self.matrizA_3_input.get()) + int(self.matrizB_3_input.get())
-                    resultado4 = int(self.matrizA_4_input.get()) + int(self.matrizB_4_input.get())
-                    resultado5 = int(self.matrizA_5_input.get()) + int(self.matrizB_5_input.get())
-                    resultado6 = int(self.matrizA_6_input.get()) + int(self.matrizB_6_input.get())
+                if int(self.tamanio1_columnas_input.get()) == 2:
+                    if int(self.tamanio2_columnas_input.get()) == 3:
+                        resultado1 = ((int(self.matrizA_1_input.get()) * int(self.matrizB_1_input.get())) +
+                                      (int(self.matrizA_2_input.get()) * int(self.matrizB_4_input.get())))
+                        resultado2 = ((int(self.matrizA_1_input.get()) * int(self.matrizB_2_input.get())) +
+                                      (int(self.matrizA_2_input.get()) * int(self.matrizB_5_input.get())))
+                        resultado3 = ((int(self.matrizA_1_input.get()) * int(self.matrizB_3_input.get())) +
+                                      (int(self.matrizA_2_input.get()) * int(self.matrizB_6_input.get())))
+                        resultado4 = ((int(self.matrizA_3_input.get()) * int(self.matrizB_1_input.get())) +
+                                      (int(self.matrizA_4_input.get()) * int(self.matrizB_4_input.get())))
+                        resultado5 = ((int(self.matrizA_3_input.get()) * int(self.matrizB_2_input.get())) +
+                                      (int(self.matrizA_4_input.get()) * int(self.matrizB_5_input.get())))
+                        resultado6 = ((int(self.matrizA_3_input.get()) * int(self.matrizB_3_input.get())) +
+                                      (int(self.matrizA_4_input.get()) * int(self.matrizB_6_input.get())))
 
-                    self.resultado1.configure(placeholder_text=str(resultado1))
-                    self.resultado2.configure(placeholder_text=str(resultado2))
-                    self.resultado3.configure(placeholder_text=str(resultado3))
-                    self.resultado4.configure(placeholder_text=str(resultado4))
-                    self.resultado5.configure(placeholder_text=str(resultado5))
-                    self.resultado6.configure(placeholder_text=str(resultado6))
-                elif int(self.tamanio2_columnas_input.get()) == 4:
-                    resultado1 = int(self.matrizA_1_input.get()) + int(self.matrizB_1_input.get())
-                    resultado2 = int(self.matrizA_2_input.get()) + int(self.matrizB_2_input.get())
-                    resultado3 = int(self.matrizA_3_input.get()) + int(self.matrizB_3_input.get())
-                    resultado4 = int(self.matrizA_4_input.get()) + int(self.matrizB_4_input.get())
-                    resultado5 = int(self.matrizA_5_input.get()) + int(self.matrizB_5_input.get())
-                    resultado6 = int(self.matrizA_6_input.get()) + int(self.matrizB_6_input.get())
-                    resultado7 = int(self.matrizA_7_input.get()) + int(self.matrizB_7_input.get())
-                    resultado8 = int(self.matrizA_8_input.get()) + int(self.matrizB_8_input.get())
-
-                    self.resultado1.configure(placeholder_text=str(resultado1))
-                    self.resultado2.configure(placeholder_text=str(resultado2))
-                    self.resultado3.configure(placeholder_text=str(resultado3))
-                    self.resultado4.configure(placeholder_text=str(resultado4))
-                    self.resultado5.configure(placeholder_text=str(resultado5))
-                    self.resultado6.configure(placeholder_text=str(resultado6))
-                    self.resultado7.configure(placeholder_text=str(resultado7))
-                    self.resultado8.configure(placeholder_text=str(resultado8))
+                        self.resultado1.configure(placeholder_text=str(resultado1))
+                        self.resultado2.configure(placeholder_text=str(resultado2))
+                        self.resultado3.configure(placeholder_text=str(resultado3))
+                        self.resultado4.configure(placeholder_text=str(resultado4))
+                        self.resultado5.configure(placeholder_text=str(resultado5))
+                        self.resultado6.configure(placeholder_text=str(resultado6))
+                    elif int(self.tamanio2_filas_input.get()) == 4:
+                        pass
+                elif int(self.tamanio1_columnas_input.get()) == 3:
+                    if int(self.tamanio2_columnas_input.get()) == 3:
+                        pass
+                    elif int(self.tamanio2_columnas_input.get()) == 4:
+                        pass
+                elif int(self.tamanio1_columnas_input.get()) == 4:
+                    if int(self.tamanio2_columnas_input.get()) == 3:
+                        pass
+                    elif int(self.tamanio2_columnas_input.get()) == 4:
+                        pass
             elif int(self.tamanio1_filas_input.get()) == 3:
-                if int(self.tamanio2_columnas_input.get()) == 2:
-                    resultado1 = int(self.matrizA_1_input.get()) + int(self.matrizB_1_input.get())
-                    resultado2 = int(self.matrizA_2_input.get()) + int(self.matrizB_2_input.get())
-                    resultado3 = int(self.matrizA_3_input.get()) + int(self.matrizB_3_input.get())
-                    resultado4 = int(self.matrizA_4_input.get()) + int(self.matrizB_4_input.get())
-                    resultado5 = int(self.matrizA_5_input.get()) + int(self.matrizB_5_input.get())
-                    resultado6 = int(self.matrizA_6_input.get()) + int(self.matrizB_6_input.get())
-
-                    self.resultado1.configure(placeholder_text=str(resultado1))
-                    self.resultado2.configure(placeholder_text=str(resultado2))
-                    self.resultado3.configure(placeholder_text=str(resultado3))
-                    self.resultado4.configure(placeholder_text=str(resultado4))
-                    self.resultado5.configure(placeholder_text=str(resultado5))
-                    self.resultado6.configure(placeholder_text=str(resultado6))
-                elif int(self.tamanio2_columnas_input.get()) == 4:
-                    resultado1 = int(self.matrizA_1_input.get()) + int(self.matrizB_1_input.get())
-                    resultado2 = int(self.matrizA_2_input.get()) + int(self.matrizB_2_input.get())
-                    resultado3 = int(self.matrizA_3_input.get()) + int(self.matrizB_3_input.get())
-                    resultado4 = int(self.matrizA_4_input.get()) + int(self.matrizB_4_input.get())
-                    resultado5 = int(self.matrizA_5_input.get()) + int(self.matrizB_5_input.get())
-                    resultado6 = int(self.matrizA_6_input.get()) + int(self.matrizB_6_input.get())
-                    resultado7 = int(self.matrizA_7_input.get()) + int(self.matrizB_7_input.get())
-                    resultado8 = int(self.matrizA_8_input.get()) + int(self.matrizB_8_input.get())
-                    resultado9 = int(self.matrizA_9_input.get()) + int(self.matrizB_9_input.get())
-                    resultado10 = int(self.matrizA_10_input.get()) + int(self.matrizB_10_input.get())
-                    resultado11 = int(self.matrizA_11_input.get()) + int(self.matrizB_11_input.get())
-                    resultado12 = int(self.matrizA_12_input.get()) + int(self.matrizB_12_input.get())
-
-                    self.resultado1.configure(placeholder_text=str(resultado1))
-                    self.resultado2.configure(placeholder_text=str(resultado2))
-                    self.resultado3.configure(placeholder_text=str(resultado3))
-                    self.resultado4.configure(placeholder_text=str(resultado4))
-                    self.resultado5.configure(placeholder_text=str(resultado5))
-                    self.resultado6.configure(placeholder_text=str(resultado6))
-                    self.resultado7.configure(placeholder_text=str(resultado7))
-                    self.resultado8.configure(placeholder_text=str(resultado8))
-                    self.resultado9.configure(placeholder_text=str(resultado9))
-                    self.resultado10.configure(placeholder_text=str(resultado10))
-                    self.resultado11.configure(placeholder_text=str(resultado11))
-                    self.resultado12.configure(placeholder_text=str(resultado12))
+                if int(self.tamanio1_columnas_input.get()) == 2:
+                    if int(self.tamanio2_columnas_input.get()) == 2:
+                        pass
+                    elif int(self.tamanio2_columnas_input.get()) == 4:
+                        pass
+                elif int(self.tamanio1_columnas_input.get()) == 3:
+                    if int(self.tamanio2_columnas_input.get()) == 2:
+                        pass
+                    elif int(self.tamanio2_columnas_input.get()) == 4:
+                        pass
+                elif int(self.tamanio1_columnas_input.get()) == 4:
+                    if int(self.tamanio2_columnas_input.get()) == 2:
+                        pass
+                    elif int(self.tamanio2_columnas_input.get()) == 4:
+                        pass
             elif int(self.tamanio1_filas_input.get()) == 4:
-                if int(self.tamanio2_columnas_input.get()) == 2:
-                    resultado1 = int(self.matrizA_1_input.get()) + int(self.matrizB_1_input.get())
-                    resultado2 = int(self.matrizA_2_input.get()) + int(self.matrizB_2_input.get())
-                    resultado3 = int(self.matrizA_3_input.get()) + int(self.matrizB_3_input.get())
-                    resultado4 = int(self.matrizA_4_input.get()) + int(self.matrizB_4_input.get())
-                    resultado5 = int(self.matrizA_5_input.get()) + int(self.matrizB_5_input.get())
-                    resultado6 = int(self.matrizA_6_input.get()) + int(self.matrizB_6_input.get())
-                    resultado7 = int(self.matrizA_7_input.get()) + int(self.matrizB_7_input.get())
-                    resultado8 = int(self.matrizA_8_input.get()) + int(self.matrizB_8_input.get())
-
-                    self.resultado1.configure(placeholder_text=str(resultado1))
-                    self.resultado2.configure(placeholder_text=str(resultado2))
-                    self.resultado3.configure(placeholder_text=str(resultado3))
-                    self.resultado4.configure(placeholder_text=str(resultado4))
-                    self.resultado5.configure(placeholder_text=str(resultado5))
-                    self.resultado6.configure(placeholder_text=str(resultado6))
-                    self.resultado7.configure(placeholder_text=str(resultado7))
-                    self.resultado8.configure(placeholder_text=str(resultado8))
-                elif int(self.tamanio2_columnas_input.get()) == 3:
-                    resultado1 = int(self.matrizA_1_input.get()) + int(self.matrizB_1_input.get())
-                    resultado2 = int(self.matrizA_2_input.get()) + int(self.matrizB_2_input.get())
-                    resultado3 = int(self.matrizA_3_input.get()) + int(self.matrizB_3_input.get())
-                    resultado4 = int(self.matrizA_4_input.get()) + int(self.matrizB_4_input.get())
-                    resultado5 = int(self.matrizA_5_input.get()) + int(self.matrizB_5_input.get())
-                    resultado6 = int(self.matrizA_6_input.get()) + int(self.matrizB_6_input.get())
-                    resultado7 = int(self.matrizA_7_input.get()) + int(self.matrizB_7_input.get())
-                    resultado8 = int(self.matrizA_8_input.get()) + int(self.matrizB_8_input.get())
-                    resultado9 = int(self.matrizA_9_input.get()) + int(self.matrizB_9_input.get())
-                    resultado10 = int(self.matrizA_10_input.get()) + int(self.matrizB_10_input.get())
-                    resultado11 = int(self.matrizA_11_input.get()) + int(self.matrizB_11_input.get())
-                    resultado12 = int(self.matrizA_12_input.get()) + int(self.matrizB_12_input.get())
-
-                    self.resultado1.configure(placeholder_text=str(resultado1))
-                    self.resultado2.configure(placeholder_text=str(resultado2))
-                    self.resultado3.configure(placeholder_text=str(resultado3))
-                    self.resultado4.configure(placeholder_text=str(resultado4))
-                    self.resultado5.configure(placeholder_text=str(resultado5))
-                    self.resultado6.configure(placeholder_text=str(resultado6))
-                    self.resultado7.configure(placeholder_text=str(resultado7))
-                    self.resultado8.configure(placeholder_text=str(resultado8))
-                    self.resultado9.configure(placeholder_text=str(resultado9))
-                    self.resultado10.configure(placeholder_text=str(resultado10))
-                    self.resultado11.configure(placeholder_text=str(resultado11))
-                    self.resultado12.configure(placeholder_text=str(resultado12))
+                if int(self.tamanio1_columnas_input.get()) == 2:
+                    if int(self.tamanio2_columnas_input.get()) == 2:
+                        pass
+                    elif int(self.tamanio2_columnas_input.get()) == 3:
+                        pass
+                elif int(self.tamanio1_columnas_input.get()) == 3:
+                    if int(self.tamanio2_columnas_input.get()) == 2:
+                        pass
+                    elif int(self.tamanio2_columnas_input.get()) == 3:
+                        pass
+                elif int(self.tamanio1_columnas_input.get()) == 4:
+                    if int(self.tamanio2_columnas_input.get()) == 2:
+                        pass
+                    elif int(self.tamanio2_columnas_input.get()) == 3:
+                        pass
