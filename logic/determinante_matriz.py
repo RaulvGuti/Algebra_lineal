@@ -1,82 +1,66 @@
-import numpy as np
-
-
-def leer_matriz(filas, columnas):
-    matriz = []
-    print("Introduce los elementos de la matriz:")
-    for i in range(filas):
-        fila = []
-        for j in range(columnas):
-            while True:
-                try:
-                    elemento = float(input(f"Elemento [{i + 1}][{j + 1}]: "))
-                    break
-                except ValueError:
-                    print("Por favor, introduce un número válido.")
-            fila.append(elemento)
-        matriz.append(fila)
-    return np.array(matriz)
-
-
-def mostrar_matriz(matriz, mensaje):
-    print(mensaje)
-    print(matriz)
-
-
-def gauss_jordan(A):
-    n = len(A)
+def get_matrix():
+    """Solicita al usuario los elementos de la matriz cuadrada elemento por elemento."""
+    n = int(input("Ingrese el tamaño de la matriz cuadrada (n x n): "))
+    matrix = []
+    print("Ingrese los elementos de la matriz uno por uno:")
     for i in range(n):
-        # Pivote para la columna actual y hacerlo 1
-        pivot = A[i][i]
-        if pivot == 0:
-            raise ValueError("La matriz no es invertible.")
-        for j in range(n * 2):
-            A[i][j] /= pivot
-        mostrar_matriz(A, f"Dividiendo fila {i + 1} por el pivote {pivot}:")
-
-        # Hacer 0 los otros elementos en la columna y fila
-        for k in range(n):
-            if k != i:
-                factor = A[k][i]
-                for j in range(n * 2):
-                    A[k][j] -= factor * A[i][j]
-                mostrar_matriz(A, f"Restando {factor} veces la fila {i + 1} de la fila {k + 1}:")
-    # Extraer la inversa de la parte derecha
-    inv = [row[n:] for row in A]
-    return inv
+        row = []
+        for j in range(n):
+            element = int(input(f"Elemento ({i + 1}, {j + 1}): "))
+            row.append(element)
+        matrix.append(row)
+    return matrix
 
 
-def calcular_determinante(matriz):
-    n = len(matriz)
-    if n != len(matriz[0]):
-        raise ValueError("La matriz no es cuadrada.")
+def minor(matrix, i, j):
+    """Devuelve el menor de la matriz excluyendo la fila i y la columna j."""
+    return [row[:j] + row[j + 1:] for row in (matrix[:i] + matrix[i + 1:])]
 
-    if n == 1:
-        return matriz[0][0]
 
-    det = 1
-    for i in range(n):
-        det *= matriz[i][i]
+def print_matrix(matrix):
+    """Imprime la matriz."""
+    for row in matrix:
+        print(" ".join(map(str, row)))
+
+
+def determinant(matrix, level=0):
+    """Calcula el determinante de una matriz cuadrada recursivamente."""
+    n = len(matrix)
+
+    # Caso base: matriz 2x2
+    if n == 2:
+        det = matrix[0][0] * matrix[1][1] - matrix[0][1] * matrix[1][0]
+        print("  " * level + f"Determinante de la submatriz 2x2: {det}")
+        return det
+
+    det = 0
+    for j in range(n):
+        # Calculamos el menor
+        minor_matrix = minor(matrix, 0, j)
+        cofactor = ((-1) ** j) * matrix[0][j]
+        print("  " * level + f"Expansión por cofactores usando el elemento ({0}, {j}) = {matrix[0][j]}")
+        print("  " * level + f"Submatriz menor excluyendo la fila 0 y la columna {j}:")
+        print_matrix(minor_matrix)
+
+        # Recursivamente calculamos el determinante del menor
+        minor_det = determinant(minor_matrix, level + 1)
+        print("  " * level + f"Cofactor: {cofactor}, Determinante del menor: {minor_det}")
+
+        # Sumamos al determinante total
+        det += cofactor * minor_det
+        print("  " * level + f"Determinante acumulado: {det}")
+
     return det
 
 
-def ejecutar_programa():
-    try:
-        n = int(input("Introduce el tamaño de la matriz cuadrada: "))
-        if n <= 0:
-            raise ValueError
-    except ValueError:
-        print("Por favor, introduce un número entero positivo.")
-        return
+def main():
+    matrix = get_matrix()
+    print("La matriz ingresada es:")
+    print_matrix(matrix)
 
-    matriz = leer_matriz(n, n)
-    mostrar_matriz(matriz, "La matriz ingresada es:")
-
-    try:
-        det = calcular_determinante(matriz)
-        print("\nLa determinante de la matriz es:", det)
-    except ValueError as e:
-        print(e)
+    det = determinant(matrix)
+    print(f"El determinante de la matriz es: {det}")
 
 
-ejecutar_programa()
+if __name__ == "__main__":
+    main()

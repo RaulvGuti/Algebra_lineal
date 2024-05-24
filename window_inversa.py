@@ -28,6 +28,10 @@ class WindowInversa:
         self.result_label = customtkinter.CTkLabel(self.frame, text="")
         self.result_label.pack(pady=10)
 
+        # Añadir Textbox para los pasos
+        self.steps_textbox = customtkinter.CTkTextbox(self.frame, width=500, height=200)
+        self.steps_textbox.pack(pady=10)
+
     def capturar_tamano(self):
         try:
             self.size = int(self.entry_size.get())
@@ -70,20 +74,25 @@ class WindowInversa:
             return None
 
     def calcular_inversa(self):
+        self.steps_textbox.delete(1.0, customtkinter.END)  # Limpiar el Textbox
         matriz = self.capturar_matriz()
         if matriz is None:
             return
-        mostrar_matriz(matriz, "La matriz ingresada es:")
+        self.mostrar_matriz(matriz, "La matriz ingresada es:")
         matriz_identidad = np.identity(self.size)
         matriz_ampliada = np.concatenate((matriz, matriz_identidad), axis=1)
-        mostrar_matriz(matriz_ampliada, "\nMatriz aumentada con la identidad:")
+        self.mostrar_matriz(matriz_ampliada, "\nMatriz aumentada con la identidad:")
 
         try:
-            matriz_inversa = gauss_jordan(matriz_ampliada)
+            matriz_inversa = gauss_jordan(matriz_ampliada, self.mostrar_matriz)
             resultado = np.array(matriz_inversa)
             self.result_label.configure(text=f"\nLa matriz inversa es:\n{resultado}")
         except ValueError as e:
             self.result_label.configure(text=str(e))
+
+    def mostrar_matriz(self, matriz, mensaje):
+        self.steps_textbox.insert(customtkinter.END, f"{mensaje}\n{matriz}\n\n")
+        self.steps_textbox.yview(customtkinter.END)  # Scroll hasta el final
 
 
 def cargar_datos():
@@ -102,12 +111,7 @@ def frame1(ventana):
     return frame
 
 
-def mostrar_matriz(matriz, mensaje):
-    print(mensaje)
-    print(matriz)
-
-
-def gauss_jordan(A):
+def gauss_jordan(A, mostrar_func):
     n = len(A)
     for i in range(n):
         pivot = A[i][i]
@@ -115,14 +119,14 @@ def gauss_jordan(A):
             raise ValueError("La matriz no es invertible.")
         for j in range(n * 2):
             A[i][j] /= pivot
-        mostrar_matriz(A, f"Dividiendo fila {i + 1} por el pivote {pivot}:")
+        mostrar_func(A, f"Dividiendo fila {i + 1} por el pivote {pivot}:")
 
         for k in range(n):
             if k != i:
                 factor = A[k][i]
                 for j in range(n * 2):
                     A[k][j] -= factor * A[i][j]
-                mostrar_matriz(A, f"Restando {factor} veces la fila {i + 1} de la fila {k + 1}:")
+                mostrar_func(A, f"Restando {factor} veces la fila {i + 1} de la fila {k + 1}:")
     inv = [row[n:] for row in A]
     return inv
 
