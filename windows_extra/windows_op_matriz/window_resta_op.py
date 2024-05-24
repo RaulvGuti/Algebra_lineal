@@ -40,6 +40,11 @@ class WindowRestaOp:
         self.tamanio_label.pack(padx=40, pady=40)
         self.tamanio_label.place(x=250, y=60)
 
+        # procedimiento
+        self.label_proc = customtkinter.CTkLabel(master=self.frame, text='', font=("Arial", 12))
+        self.label_proc.pack(padx=40, pady=40)
+        self.label_proc.place(x=210, y=405)
+
         # Generar bloques de matrices
         self.matrizA_label = customtkinter.CTkLabel(master=self.frame, text='Matriz 1', font=("Arial", 15))
         self.matrizA_1_input = customtkinter.CTkEntry(master=self.frame, width=40, height=40)
@@ -923,8 +928,8 @@ class WindowRestaOp:
                 self.resultado8.place(x=145, y=450)
 
                 self.resultado9 = customtkinter.CTkEntry(master=self.frame, width=40, height=40)
-                self.matrizA_9_input.pack(padx=40, pady=40)
-                self.matrizA_9_input.place(x=10, y=495)
+                self.resultado9.pack(padx=40, pady=40)
+                self.resultado9.place(x=10, y=495)
 
                 self.resultado10 = customtkinter.CTkEntry(master=self.frame, width=40, height=40)
                 self.resultado10.pack(padx=40, pady=40)
@@ -1244,6 +1249,7 @@ class WindowRestaOp:
 
     def restar_matriz(self):  # Parte logica de la resta
         self.generar_resultado(int(self.tamanio_filas_input.get()), int(self.tamanio_columnas_input.get()))
+        text = 'PROCEDIMIENTO\n'
         if int(self.tamanio_columnas_input.get()) == int(self.tamanio_filas_input.get()):
             if int(self.tamanio_filas_input.get()) == 4:
                 resultado1 = int(self.matrizA_1_input.get()) - int(self.matrizB_1_input.get())
@@ -1262,6 +1268,25 @@ class WindowRestaOp:
                 resultado14 = int(self.matrizA_14_input.get()) - int(self.matrizB_14_input.get())
                 resultado15 = int(self.matrizA_15_input.get()) - int(self.matrizB_15_input.get())
                 resultado16 = int(self.matrizA_16_input.get()) - int(self.matrizB_16_input.get())
+
+                text += f'{self.matrizA_1_input.get()} - {self.matrizB_1_input.get()} = {resultado1} \n'
+                text += f'{self.matrizA_2_input.get()} - {self.matrizB_2_input.get()} = {resultado2} \n'
+                text += f'{self.matrizA_3_input.get()} - {self.matrizB_3_input.get()} = {resultado3} \n'
+                text += f'{self.matrizA_4_input.get()} - {self.matrizB_4_input.get()} = {resultado4} \n'
+                text += f'{self.matrizA_5_input.get()} - {self.matrizB_5_input.get()} = {resultado5} \n'
+                text += f'{self.matrizA_6_input.get()} - {self.matrizB_6_input.get()} = {resultado6} \n'
+                text += f'{self.matrizA_7_input.get()} - {self.matrizB_7_input.get()} = {resultado7} \n'
+                text += f'{self.matrizA_8_input.get()} - {self.matrizB_8_input.get()} = {resultado8} \n'
+                text += f'{self.matrizA_9_input.get()} - {self.matrizB_9_input.get()} = {resultado9} \n'
+                text += f'{self.matrizA_10_input.get()} - {self.matrizB_10_input.get()} = {resultado10} \n'
+                text += f'{self.matrizA_11_input.get()} - {self.matrizB_11_input.get()} = {resultado11} \n'
+                text += f'{self.matrizA_12_input.get()} - {self.matrizB_12_input.get()} = {resultado12} \n'
+                text += f'{self.matrizA_13_input.get()} - {self.matrizB_13_input.get()} = {resultado13} \n'
+                text += f'{self.matrizA_14_input.get()} - {self.matrizB_14_input.get()} = {resultado14} \n'
+                text += f'{self.matrizA_15_input.get()} - {self.matrizB_15_input.get()} = {resultado15} \n'
+                text += f'{self.matrizA_16_input.get()} - {self.matrizB_16_input.get()} = {resultado16} \n'
+
+                self.label_proc.configure(text=text)
 
                 self.resultado1.configure(placeholder_text=str(resultado1))
                 self.resultado2.configure(placeholder_text=str(resultado2))
@@ -1290,6 +1315,18 @@ class WindowRestaOp:
                 resultado8 = int(self.matrizA_8_input.get()) - int(self.matrizB_8_input.get())
                 resultado9 = int(self.matrizA_9_input.get()) - int(self.matrizB_9_input.get())
 
+                text += f'{self.matrizA_1_input.get()} - {self.matrizB_1_input.get()} = {resultado1} \n'
+                text += f'{self.matrizA_2_input.get()} - {self.matrizB_2_input.get()} = {resultado2} \n'
+                text += f'{self.matrizA_3_input.get()} - {self.matrizB_3_input.get()} = {resultado3} \n'
+                text += f'{self.matrizA_4_input.get()} - {self.matrizB_4_input.get()} = {resultado4} \n'
+                text += f'{self.matrizA_5_input.get()} - {self.matrizB_5_input.get()} = {resultado5} \n'
+                text += f'{self.matrizA_6_input.get()} - {self.matrizB_6_input.get()} = {resultado6} \n'
+                text += f'{self.matrizA_7_input.get()} - {self.matrizB_7_input.get()} = {resultado7} \n'
+                text += f'{self.matrizA_8_input.get()} - {self.matrizB_8_input.get()} = {resultado8} \n'
+                text += f'{self.matrizA_9_input.get()} - {self.matrizB_9_input.get()} = {resultado9} \n'
+
+                self.label_proc.configure(text=text)
+
                 self.resultado1.configure(placeholder_text=str(resultado1))
                 self.resultado2.configure(placeholder_text=str(resultado2))
                 self.resultado3.configure(placeholder_text=str(resultado3))
@@ -1305,6 +1342,13 @@ class WindowRestaOp:
                 resultado3 = int(self.matrizA_3_input.get()) - int(self.matrizB_3_input.get())
                 resultado4 = int(self.matrizA_4_input.get()) - int(self.matrizB_4_input.get())
 
+                text += f'{self.matrizA_1_input.get()} - {self.matrizB_1_input.get()} = {resultado1} \n'
+                text += f'{self.matrizA_2_input.get()} - {self.matrizB_2_input.get()} = {resultado2} \n'
+                text += f'{self.matrizA_3_input.get()} - {self.matrizB_3_input.get()} = {resultado3} \n'
+                text += f'{self.matrizA_4_input.get()} - {self.matrizB_4_input.get()} = {resultado4} \n'
+
+                self.label_proc.configure(text=text)
+
                 self.resultado1.configure(placeholder_text=str(resultado1))
                 self.resultado2.configure(placeholder_text=str(resultado2))
                 self.resultado3.configure(placeholder_text=str(resultado3))
@@ -1318,6 +1362,15 @@ class WindowRestaOp:
                     resultado4 = int(self.matrizA_4_input.get()) - int(self.matrizB_4_input.get())
                     resultado5 = int(self.matrizA_5_input.get()) - int(self.matrizB_5_input.get())
                     resultado6 = int(self.matrizA_6_input.get()) - int(self.matrizB_6_input.get())
+
+                    text += f'{self.matrizA_1_input.get()} - {self.matrizB_1_input.get()} = {resultado1} \n'
+                    text += f'{self.matrizA_2_input.get()} - {self.matrizB_2_input.get()} = {resultado2} \n'
+                    text += f'{self.matrizA_3_input.get()} - {self.matrizB_3_input.get()} = {resultado3} \n'
+                    text += f'{self.matrizA_4_input.get()} - {self.matrizB_4_input.get()} = {resultado4} \n'
+                    text += f'{self.matrizA_5_input.get()} - {self.matrizB_5_input.get()} = {resultado5} \n'
+                    text += f'{self.matrizA_6_input.get()} - {self.matrizB_6_input.get()} = {resultado6} \n'
+
+                    self.label_proc.configure(text=text)
 
                     self.resultado1.configure(placeholder_text=str(resultado1))
                     self.resultado2.configure(placeholder_text=str(resultado2))
@@ -1335,6 +1388,17 @@ class WindowRestaOp:
                     resultado7 = int(self.matrizA_7_input.get()) - int(self.matrizB_7_input.get())
                     resultado8 = int(self.matrizA_8_input.get()) - int(self.matrizB_8_input.get())
 
+                    text += f'{self.matrizA_1_input.get()} - {self.matrizB_1_input.get()} = {resultado1} \n'
+                    text += f'{self.matrizA_2_input.get()} - {self.matrizB_2_input.get()} = {resultado2} \n'
+                    text += f'{self.matrizA_3_input.get()} - {self.matrizB_3_input.get()} = {resultado3} \n'
+                    text += f'{self.matrizA_4_input.get()} - {self.matrizB_4_input.get()} = {resultado4} \n'
+                    text += f'{self.matrizA_5_input.get()} - {self.matrizB_5_input.get()} = {resultado5} \n'
+                    text += f'{self.matrizA_6_input.get()} - {self.matrizB_6_input.get()} = {resultado6} \n'
+                    text += f'{self.matrizA_7_input.get()} - {self.matrizB_7_input.get()} = {resultado7} \n'
+                    text += f'{self.matrizA_8_input.get()} - {self.matrizB_8_input.get()} = {resultado8} \n'
+
+                    self.label_proc.configure(text=text)
+
                     self.resultado1.configure(placeholder_text=str(resultado1))
                     self.resultado2.configure(placeholder_text=str(resultado2))
                     self.resultado3.configure(placeholder_text=str(resultado3))
@@ -1351,6 +1415,15 @@ class WindowRestaOp:
                     resultado4 = int(self.matrizA_4_input.get()) - int(self.matrizB_4_input.get())
                     resultado5 = int(self.matrizA_5_input.get()) - int(self.matrizB_5_input.get())
                     resultado6 = int(self.matrizA_6_input.get()) - int(self.matrizB_6_input.get())
+
+                    text += f'{self.matrizA_1_input.get()} - {self.matrizB_1_input.get()} = {resultado1} \n'
+                    text += f'{self.matrizA_2_input.get()} - {self.matrizB_2_input.get()} = {resultado2} \n'
+                    text += f'{self.matrizA_3_input.get()} - {self.matrizB_3_input.get()} = {resultado3} \n'
+                    text += f'{self.matrizA_4_input.get()} - {self.matrizB_4_input.get()} = {resultado4} \n'
+                    text += f'{self.matrizA_5_input.get()} - {self.matrizB_5_input.get()} = {resultado5} \n'
+                    text += f'{self.matrizA_6_input.get()} - {self.matrizB_6_input.get()} = {resultado6} \n'
+
+                    self.label_proc.configure(text=text)
 
                     self.resultado1.configure(placeholder_text=str(resultado1))
                     self.resultado2.configure(placeholder_text=str(resultado2))
@@ -1371,6 +1444,21 @@ class WindowRestaOp:
                     resultado10 = int(self.matrizA_10_input.get()) - int(self.matrizB_10_input.get())
                     resultado11 = int(self.matrizA_11_input.get()) - int(self.matrizB_11_input.get())
                     resultado12 = int(self.matrizA_12_input.get()) - int(self.matrizB_12_input.get())
+
+                    text += f'{self.matrizA_1_input.get()} - {self.matrizB_1_input.get()} = {resultado1} \n'
+                    text += f'{self.matrizA_2_input.get()} - {self.matrizB_2_input.get()} = {resultado2} \n'
+                    text += f'{self.matrizA_3_input.get()} - {self.matrizB_3_input.get()} = {resultado3} \n'
+                    text += f'{self.matrizA_4_input.get()} - {self.matrizB_4_input.get()} = {resultado4} \n'
+                    text += f'{self.matrizA_5_input.get()} - {self.matrizB_5_input.get()} = {resultado5} \n'
+                    text += f'{self.matrizA_6_input.get()} - {self.matrizB_6_input.get()} = {resultado6} \n'
+                    text += f'{self.matrizA_7_input.get()} - {self.matrizB_7_input.get()} = {resultado7} \n'
+                    text += f'{self.matrizA_8_input.get()} - {self.matrizB_8_input.get()} = {resultado8} \n'
+                    text += f'{self.matrizA_9_input.get()} - {self.matrizB_9_input.get()} = {resultado9} \n'
+                    text += f'{self.matrizA_10_input.get()} - {self.matrizB_10_input.get()} = {resultado10} \n'
+                    text += f'{self.matrizA_11_input.get()} - {self.matrizB_11_input.get()} = {resultado11} \n'
+                    text += f'{self.matrizA_12_input.get()} - {self.matrizB_12_input.get()} = {resultado12} \n'
+
+                    self.label_proc.configure(text=text)
 
                     self.resultado1.configure(placeholder_text=str(resultado1))
                     self.resultado2.configure(placeholder_text=str(resultado2))
@@ -1395,6 +1483,17 @@ class WindowRestaOp:
                     resultado7 = int(self.matrizA_7_input.get()) - int(self.matrizB_7_input.get())
                     resultado8 = int(self.matrizA_8_input.get()) - int(self.matrizB_8_input.get())
 
+                    text += f'{self.matrizA_1_input.get()} - {self.matrizB_1_input.get()} = {resultado1} \n'
+                    text += f'{self.matrizA_2_input.get()} - {self.matrizB_2_input.get()} = {resultado2} \n'
+                    text += f'{self.matrizA_3_input.get()} - {self.matrizB_3_input.get()} = {resultado3} \n'
+                    text += f'{self.matrizA_4_input.get()} - {self.matrizB_4_input.get()} = {resultado4} \n'
+                    text += f'{self.matrizA_5_input.get()} - {self.matrizB_5_input.get()} = {resultado5} \n'
+                    text += f'{self.matrizA_6_input.get()} - {self.matrizB_6_input.get()} = {resultado6} \n'
+                    text += f'{self.matrizA_7_input.get()} - {self.matrizB_7_input.get()} = {resultado7} \n'
+                    text += f'{self.matrizA_8_input.get()} - {self.matrizB_8_input.get()} = {resultado8} \n'
+
+                    self.label_proc.configure(text=text)
+
                     self.resultado1.configure(placeholder_text=str(resultado1))
                     self.resultado2.configure(placeholder_text=str(resultado2))
                     self.resultado3.configure(placeholder_text=str(resultado3))
@@ -1417,6 +1516,21 @@ class WindowRestaOp:
                     resultado11 = int(self.matrizA_11_input.get()) - int(self.matrizB_11_input.get())
                     resultado12 = int(self.matrizA_12_input.get()) - int(self.matrizB_12_input.get())
 
+                    text += f'{self.matrizA_1_input.get()} - {self.matrizB_1_input.get()} = {resultado1} \n'
+                    text += f'{self.matrizA_2_input.get()} - {self.matrizB_2_input.get()} = {resultado2} \n'
+                    text += f'{self.matrizA_3_input.get()} - {self.matrizB_3_input.get()} = {resultado3} \n'
+                    text += f'{self.matrizA_4_input.get()} - {self.matrizB_4_input.get()} = {resultado4} \n'
+                    text += f'{self.matrizA_5_input.get()} - {self.matrizB_5_input.get()} = {resultado5} \n'
+                    text += f'{self.matrizA_6_input.get()} - {self.matrizB_6_input.get()} = {resultado6} \n'
+                    text += f'{self.matrizA_7_input.get()} - {self.matrizB_7_input.get()} = {resultado7} \n'
+                    text += f'{self.matrizA_8_input.get()} - {self.matrizB_8_input.get()} = {resultado8} \n'
+                    text += f'{self.matrizA_9_input.get()} - {self.matrizB_9_input.get()} = {resultado9} \n'
+                    text += f'{self.matrizA_10_input.get()} - {self.matrizB_10_input.get()} = {resultado10} \n'
+                    text += f'{self.matrizA_11_input.get()} - {self.matrizB_11_input.get()} = {resultado11} \n'
+                    text += f'{self.matrizA_12_input.get()} - {self.matrizB_12_input.get()} = {resultado12} \n'
+
+                    self.label_proc.configure(text=text)
+
                     self.resultado1.configure(placeholder_text=str(resultado1))
                     self.resultado2.configure(placeholder_text=str(resultado2))
                     self.resultado3.configure(placeholder_text=str(resultado3))
@@ -1429,4 +1543,3 @@ class WindowRestaOp:
                     self.resultado10.configure(placeholder_text=str(resultado10))
                     self.resultado11.configure(placeholder_text=str(resultado11))
                     self.resultado12.configure(placeholder_text=str(resultado12))
-
